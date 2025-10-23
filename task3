@@ -1,0 +1,21 @@
+# Користувач вводить речення
+sentence = input("Введіть речення: ")
+
+# Розділяємо речення на слова
+words = sentence.split()
+
+# Шукаємо слова, які починаються на "як"
+result_words = []
+for word in words:
+    # Видаляємо розділові знаки і робимо нижній регістр для перевірки
+    clean_word = word.strip('.,!?;:()"\'').lower()
+    if clean_word.startswith('як'):
+        result_words.append(word)
+
+# Виводимо результат
+if result_words:
+    print("Слова, які починаються на 'як':")
+    for word in result_words:
+        print(word)
+else:
+    print("Слів, які починаються на 'як', не знайдено.")
